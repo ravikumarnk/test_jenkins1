@@ -9,7 +9,7 @@ pipeline
         	{
          		steps
           		{
-			clean Test	
+			clean test	
                 	echo 'Testing my app'
           		}
         	}
@@ -18,7 +18,7 @@ pipeline
         	{
          		steps
           		{
-			package verify				
+			verify				
                 	echo 'Building my app'
           		}
         	}
