@@ -34,7 +34,7 @@ pipeline
     {
         always
         {
-            	emailext body: 'here is th body', subject: 'error', to: 'ravikelakam@gmail.com'
+            	emailext body: 'here is th body', subject: 'CICD info', to: 'ravikelakam@gmail.com'
 		echo 'Deployment completed..  my app'
         }
         
