@@ -21,7 +21,7 @@ pipeline
           		}
         	}
 
-		stage('Deploy') 
+		stage('install') 
         	{
          		steps
           		{
