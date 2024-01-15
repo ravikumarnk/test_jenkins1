@@ -1,43 +1,31 @@
-
 pipeline 
 {
     agent any
+	
+     tools
+	{
+	maven "MAVEN_HOME"
+	}
 
     stages 
 	{
-	       	stage('Test') 
+	        stage('Build') 
         	{
          		steps
           		{
-			clean test	
-                	echo 'Testing my app'
+			
+			git 'https://github.com/ravikumarnk/test_jenkins1.git'
+			//sh "mvn -Dmaven.test.failure.ignore=true clean package" 
+                	 
           		}
         	}
-	
-		stage('Build') 
-        	{
-         		steps
-          		{
-			verify				
-                	echo 'Building my app'
-          		}
-        	}
+          }
 
-		stage('install') 
-        	{
-         		steps
-          		{
-			install
-                	echo 'Deploy my app'
-          		}
-        	}
-        	
-    }
     post
     {
         always
         {
-            	emailext body: 'here is th body', subject: 'CICD info', to: 'ravikelakam@gmail.com'
+            	emailext body: 'here is th body', subject: 'error', to: 'ravikelakam@gmail.com'
 		echo 'Deployment completed..  my app'
         }
         
